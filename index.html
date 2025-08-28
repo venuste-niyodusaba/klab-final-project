@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IHAHIRO Web Application</title>
+  <script src="https://cdn.tailwindcss.com" ></script>
+  <script src="./static/js/index.js" defer></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <header class="bg-gradient-to-r from-gray-200 via-pink-100 to-gray-200 shadow-md fixed top-0 left-0 right-0 z-10">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <div class="flex items-center space-x-2">
+        <img src="./image/logo.png" alt="logo" class="w-10 h-10">
+      </div>
+      <h1 class="text-2xl font-serif tracking-wide text-center flex-1">IHAHIRO WEB APPLICATION</h1>
+      <div class="text-center">
+        <a href="./pages/googlemap.html" class="hover:underline text-blue-600"><img src="./image/icons8-shop-location-100.png" alt="Track Our Shop " /> </a>
+      </div>
+    </div>
+  </header>
+  <main class="flex flex-col md:flex-row pt-28 px-4 md:px-10 gap-4">
+    <aside class="w-full md:w-1/4 bg-gray-200 p-4 grid gap-4">
+      <img src="./image/hp.png" alt="phone" class="rounded shadow">
+      <img src="./image/iphone16.png" alt="laptop" class="rounded shadow">
+      <img src="./image/mac1.jpeg" alt="board" class="rounded shadow">
+    </aside>
+    <section class="flex-1 flex flex-col items-center justify-center bg-white p-10 rounded shadow-md">
+      <h2 class="text-xl font-semibold text-center mb-2">WELCOME TO IHAHIRO</h2>
+      <h2 class="text-xl font-semibold text-center mb-4">URAKAZA NEZA KWI IHAHIRO</h2>
+      <p class="text-gray-600 text-center mb-4">
+        Where you can buy electronic gadgets<br>
+        <b>Skincare lotions protect your fresh skin</b>
+      </p>
+
+      <div class="bg-blue-100 shadow-md rounded-lg p-8 w-full max-w-md">
+        <h3 class="text-3xl font-bold text-center mb-6">LOGIN (injira)</h3>
+        <form id="loginForm" class="space-y-5">
+          <div class="flex items-center border rounded-lg bg-white px-3 py-2">
+            <input id="email" type="email" placeholder="Email / emeyiri" class="flex-1 ml-2 outline-none" required>
+          </div>
+          <div class="flex items-center border rounded-lg bg-white px-3 py-2">
+            <input id="password" type="password" placeholder="Password / ijambo banga" class="flex-1 ml-2 outline-none" required>
+          </div>
+          <div class="flex items-center border rounded-lg bg-white px-3 py-2">
+            <select id="role" class="flex-1 ml-2 outline-none">
+              <option value="boss">Boss</option>
+              <option value="employer">Employer</option>
+              <option value="customer">Customer</option>
+            </select>
+          </div>
+
+          <button type="submit" 
+            class="w-full text-center bg-blue-500 text-white py-2 rounded hover:bg-blue-900 transition">
+            LOGIN
+          </button>
+        </form>
+
+        <div class="text-center mt-4 space-y-2">
+          <a href="pages/forgot-password.html" class="text-blue-600 hover:underline block">Forgot password? (wibagiwe ijambo banga)</a>
+          <span>Create account (kora konti)
+            <a href="pages/signup.html" class="text-blue-600 hover:underline">SIGN UP</a>
+          </span>
+        </div>
+      </div>
+    </section>
+    <aside class="w-full md:w-1/4 bg-gray-200 p-4 grid gap-4">
+      <img src="./image/boaard.avif" alt="product" class="rounded shadow">
+      <img src="./image/body.jpg" alt="product" class="rounded shadow">
+      <p class="text-center text-sm mt-2">FREE CALL 299</p>
+    </aside>
+
+  </main>
+
+ 
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Location</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    #map {
+      width: 100%;
+      height: 500px;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+  <div class="w-full max-w-4xl p-6 bg-white rounded shadow">
+    <h1 class="text-2xl font-bold mb-4 text-center">Our Shop Location</h1>
+    <div id="map"></div>
+  </div>
+
+  <script>
+    function initMap() {
+      const shopLocation = { lat: -1.9441, lng: 30.0619 };
+
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 14,
+        center: shopLocation,
+      });
+
+      new google.maps.Marker({
+        position: shopLocation,
+        map: map,
+        title: "Our Shop",
+      });
+    }
+  </script>
+
+  <script async 
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+  </script>
+</body>
+</html>

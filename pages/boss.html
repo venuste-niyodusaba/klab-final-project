@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boss Dashboard - IHAHAIRO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <header class="bg-gradient-to-r from-gray-200 via-pink-100 to-gray-200 shadow-md">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <div class="flex items-center space-x-2">
+        <img src="../image/logo.png" alt="logo" class="w-10 h-10">
+        <span class="text-lg font-bold"></span>
+      </div>
+      <h1 class="text-2xl font-serif tracking-wide">IHAHIRO WEB APPLICATION</h1>
+      <div class="flex items-center space-x-6">
+        <a href="#" class="text-blue-600 hover:underline">Hire NOW</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="flex h-screen">
+    <aside class="w-64 bg-gray-800 text-white flex flex-col">
+      <div class="px-6 py-4 text-2xl font-bold border-b border-gray-700">
+        IHAHIRO Application
+      </div>
+      <div class="flex items-center space-x-4 px-6 py-4">
+        <span class="text-gray-400">Venuste</span>
+        <img src="../image/profile.jpg" class="w-10 h-10 rounded-full border" alt="profile">
+      </div>
+      <nav class="flex-1 px-4 py-6 space-y-4">
+        <a href="#" class="block px-4 py-2 rounded hover:bg-gray-700">Capital view</a>
+        <a href="#" class="block px-4 py-2 rounded hover:bg-gray-700">Revenue</a>
+        <a href="#" class="block px-4 py-2 rounded hover:bg-gray-700">Settings</a>
+      </nav>
+      <div class="px-6 py-4 border-t border-gray-700">
+        <a href="index.html" class="block px-4 py-2 rounded bg-red-600 text-center hover:bg-red-500">Logout</a>
+      </div>
+    </aside>
+
+    <main class="flex-1 p-6 overflow-y-auto">
+      <section class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+        <div class="bg-white shadow rounded-lg p-4">
+          <h2 class="text-gray-500 text-sm">Total Sales</h2>
+          <p class="text-2xl font-bold text-gray-800">Frw 25,430</p>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4">
+          <h2 class="text-gray-500 text-sm">Orders</h2>
+          <p class="text-2xl font-bold text-gray-800">1,230</p>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4">
+          <h2 class="text-gray-500 text-sm">Customers</h2>
+          <p class="text-2xl font-bold text-gray-800">580</p>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4">
+          <h2 class="text-gray-500 text-sm">Products</h2>
+          <p class="text-2xl font-bold text-gray-800">320</p>
+        </div>
+      </section>
+
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white shadow rounded-lg p-6">
+          <h2 class="text-lg font-bold mb-4">Sales Overview</h2>
+          <canvas id="salesChart" class="w-full h-64"></canvas>
+        </div>
+        <div class="bg-white shadow rounded-lg p-6">
+          <h2 class="text-lg font-bold mb-4">Recent Orders</h2>
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b">
+                <th class="py-2">Customer</th>
+                <th class="py-2">Product</th>
+                <th class="py-2">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b">
+                <td class="py-2">Alice</td>
+                <td class="py-2">iPhone 15</td>
+                <td class="py-2 text-green-600">Completed</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-2">John</td>
+                <td class="py-2">Aloe Vera</td>
+                <td class="py-2 text-yellow-600">Pending</td>
+              </tr>
+              <tr>
+                <td class="py-2">Martha</td>
+                <td class="py-2">Laptop</td>
+                <td class="py-2 text-red-600">Cancelled</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('salesChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+        datasets: [{
+          label: 'Sales',
+          data: [3000, 4500, 3200, 6000, 7200],
+          borderColor: 'rgb(37, 99, 235)',
+          backgroundColor: 'rgba(37, 99, 235, 0.3)',
+          fill: true,
+          tension: 0.4
+        }]
+      }
+    });
+  </script>
+</body>
+</html>
